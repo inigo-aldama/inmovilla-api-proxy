@@ -1,11 +1,14 @@
 
-# Inmovilla API Proxy
+# Inmovilla API Proxy (Unofficial)
 
 [![Latest Version](https://img.shields.io/badge/version-1.0.0-blue)]()
 [![PHP](https://img.shields.io/badge/php-%5E7.4%20%7C%7C%20%5E8.0-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 `inmovilla-api-proxy` is a tool designed to solve a specific problem when interacting with the Inmovilla API: **IP-based access restrictions**.
+
+> **Note:** This project is not affiliated with, endorsed by, or maintained by Inmovilla.
+
 
 ## Why Use Inmovilla API Proxy?
 
