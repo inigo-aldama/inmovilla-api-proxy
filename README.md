@@ -101,18 +101,18 @@ Here’s a visual representation of the interaction flow between the Development
    require 'vendor/autoload.php';
 
    use Inmovilla\ApiClient\ApiClientConfig;
-   use Inmovilla\Proxy\ProxyServer;
+   use Inmovilla\Proxy\ProxyService;
    use GuzzleHttp\Client as GuzzleClient;
    use GuzzleHttp\Psr7\HttpFactory;
 
-   $config = ApiClientConfig::fromIniFile(__DIR__ . '/config/api.ini');
+   $serverConfig = ApiClientConfig::fromIniFile(__DIR__ . '/config/api.ini');
    $httpClient = new GuzzleClient();
    $requestFactory = new HttpFactory();
 
-   $proxyServer = new ProxyServer($config, $httpClient, $requestFactory);
+   $proxyService = new ProxyService($httpClient, $requestFactory, $serverConfig);
 
    $input = file_get_contents('php://input');
-   $response = $proxyServer->handleRequest($input);
+   $response = $proxyService->handleRequest($input);
 
    header('Content-Type: application/json');
    echo json_encode($response);

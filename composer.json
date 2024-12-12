@@ -9,11 +9,20 @@
       "email": "inigoaldama@gmail.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../inmovilla-api-client"
+    }
+  ],
+  "require": {
+    "inigoaldama/inmovilla-api-client": "*"
+  },
   "require": {
     "php": "^7.4 || ^8.0",
     "ext-json": "*",
     "ext-curl": "*",
-    "inigo-aldama/inmovilla-api-client": "^1.0"
+    "inigo-aldama/inmovilla-api-client": "dev-main"
   },
   "autoload": {
     "psr-4": {
@@ -31,13 +40,16 @@
     "phpstan/phpstan": "^1.10"
   },
   "scripts": {
-    "test": "phpunit --testdox",
+    "test": "phpunit --testdox tests",
     "fix": "php-cs-fixer fix",
     "analyze": "phpstan analyse"
   },
   "config": {
     "platform": {
       "php": "7.4"
+    },
+    "allow-plugins": {
+      "php-http/discovery": true
     }
   },
   "keywords": [

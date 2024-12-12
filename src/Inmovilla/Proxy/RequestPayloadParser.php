@@ -1,6 +1,8 @@
 <?php
 namespace Inmovilla\Proxy;
 
+use Inmovilla\ApiClient\Request;
+use Inmovilla\ApiClient\RequestBatch;
 use InvalidArgumentException;
 
 class RequestPayloadParser
@@ -24,17 +26,16 @@ class RequestPayloadParser
         $password = $parts[1];
         $language = (int)$parts[2];
 
-        $requests = [];
-        for ($i = 4; $i < count($parts); $i += 5) {
-            $requests[] = [
-                'type' => $parts[$i],
-                'startPosition' => $parts[$i + 1] ?? null,
-                'numElements' => $parts[$i + 2] ?? null,
-                'where' => $parts[$i + 3] ?? null,
-                'order' => $parts[$i + 4] ?? null,
-            ];
+        $requests = new RequestBatch();
+        for ($i = 3; $i < count($parts); $i += 5) {
+            $type = $parts[$i];
+            $startPosition = (int) $parts[$i + 1] ?? 1;
+            $numElements = (int) $parts[$i + 2] ?? 100;
+            $where = $parts[$i + 3] ?? '';
+            $order = $parts[$i + 4] ?? '';
+            $request = new Request ($type,$startPosition, $numElements,$where,$order);
+            $requests->addRequest($request);
         }
-
         return new RequestPayload($agency, $password, $language, $requests);
     }
 }
