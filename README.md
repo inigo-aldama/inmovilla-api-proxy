@@ -53,8 +53,7 @@ Here’s a visual representation of the interaction flow between the Development
 - **PHP**: 7.4 or higher.
 - **Composer**: For dependency management.
 - Libraries:
-    - [`inigoaldama/inmovilla-api-client`](https://packagist.org/packages/inigoaldama/inmovilla-api-client)
-    - [`guzzlehttp/guzzle`](https://packagist.org/packages/guzzlehttp/guzzle)
+    - [`inigo-aldama/inmovilla-api-client`](https://packagist.org/packages/inigo-aldama/inmovilla-api-client)
 
 ---
 
@@ -63,7 +62,7 @@ Here’s a visual representation of the interaction flow between the Development
 1. **Install the Proxy on the Production Server**
    Clone the repository or use Composer:
    ```bash
-   composer require inigoaldama/inmovilla-api-proxy
+   composer require inigo-aldama/inmovilla-api-proxy
    ```
 
 2. **Configure API Credentials**
@@ -166,4 +165,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## Credits
 
 - **Author**: Iñigo Aldama Gómez
-- **Inmovilla API Client Repository**: [inmovilla-api-client](https://github.com/inigoaldama/inmovilla-api-client)
+- **Inmovilla API Client Repository**: [inmovilla-api-client](https://github.com/inigo-aldama/inmovilla-api-client)
