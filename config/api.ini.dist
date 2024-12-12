@@ -1,0 +1,6 @@
+[DEFAULT]
+AGENCY = your_agency_name
+PASSWORD = your_password
+LANGUAGE = 1
+API_URL = https://yourdomain.com/api.php
+DOMAIN = yourdomain.com
