@@ -27,20 +27,12 @@ class ProxyService
     {
         $requestPayload = RequestPayloadParser::parse($input);
 
-        $config = new ApiClientConfig(
+        $apiClient = new ApiClient(
             $requestPayload->agency,
             $requestPayload->password,
             $requestPayload->language,
             $this->serverConfig->getApiUrl(),
-            $this->serverConfig->getDomain()
-        );
-
-        $apiClient = new ApiClient(
-            $config->getAgency(),
-            $config->getPassword(),
-            $config->getLanguage(),
-            $config->getApiUrl(),
-            $config->getDomain(),
+            $this->serverConfig->getDomain(),
             $this->httpClient,
             $this->requestFactory
         );

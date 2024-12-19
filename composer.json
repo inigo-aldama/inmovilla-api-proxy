@@ -9,12 +9,6 @@
       "email": "inigoaldama@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "path",
-      "url": "../inmovilla-api-client"
-    }
-  ],
   "require": {
     "inigoaldama/inmovilla-api-client": "*"
   },
