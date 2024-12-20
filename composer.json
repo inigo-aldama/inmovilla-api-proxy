@@ -10,13 +10,10 @@
     }
   ],
   "require": {
-    "inigoaldama/inmovilla-api-client": "^1.0"
-  },
-  "require": {
     "php": "^7.4 || ^8.0",
     "ext-json": "*",
     "ext-curl": "*",
-    "inigo-aldama/inmovilla-api-client": "dev-main"
+    "inigo-aldama/inmovilla-api-client": "^1.0"
   },
   "autoload": {
     "psr-4": {

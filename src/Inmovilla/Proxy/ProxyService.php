@@ -11,16 +11,16 @@ class ProxyService
 {
     private ClientInterface $httpClient;
     private RequestFactoryInterface $requestFactory;
-    private ApiClientConfig $serverConfig;
+    private ApiClientConfig $apiClientConfig;
 
     public function __construct(
         ClientInterface $httpClient,
         RequestFactoryInterface $requestFactory,
-        ApiClientConfig $serverConfig
+        ApiClientConfig $apiClientConfig
     ) {
         $this->httpClient = $httpClient;
         $this->requestFactory = $requestFactory;
-        $this->serverConfig = $serverConfig;
+        $this->apiClientConfig = $apiClientConfig;
     }
 
     public function handleRequest(string $input): array
@@ -31,8 +31,8 @@ class ProxyService
             $requestPayload->agency,
             $requestPayload->password,
             $requestPayload->language,
-            $this->serverConfig->getApiUrl(),
-            $this->serverConfig->getDomain(),
+            $this->apiClientConfig->getApiUrl(),
+            $this->apiClientConfig->getDomain(),
             $this->httpClient,
             $this->requestFactory
         );
